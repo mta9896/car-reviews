@@ -1,12 +1,12 @@
-FROM php:8.1-apache
+FROM php:8.1-fpm
 
 RUN apt-get update && apt-get install -y \
-    libicu-dev \
+    curl \
     libpq-dev \
-    && docker-php-ext-install -j$(nproc) intl pdo_pgsql
-
-RUN a2enmod rewrite
-RUN service apache2 restart
+    libzip-dev\
+    zip\
+    unzip\
+    && docker-php-ext-install -j$(nproc) pdo_pgsql zip
 
 WORKDIR /var/www/html
 
@@ -16,6 +16,8 @@ COPY . /var/www/html
 
 RUN composer install --no-scripts
 
-RUN chown -R www-data:www-data /var/www/html
+RUN chown -R www-data:www-data var/
 
-EXPOSE 80
+EXPOSE 9000
+
+CMD ["php-fpm"]
