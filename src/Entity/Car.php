@@ -25,4 +25,9 @@ class Car
 
     #[ORM\Column(type: Types::STRING, nullable: true)]
     private ?string $color = null;
+
+    public function getId(): ?int{
+        
+        return $this->id;
+    }
 }

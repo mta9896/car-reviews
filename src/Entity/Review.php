@@ -24,4 +24,9 @@ class Review
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $review_text = null;
+
+    public function getId(): ?int{
+        
+        return $this->id;
+    }
 }
