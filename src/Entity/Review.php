@@ -85,7 +85,7 @@ use App\ApiFilter\MinRatingFilter;
 )]
 
 #[ApiResource(
-    uriTemplate: '/car/{car}/latest-reviews',
+    uriTemplate: '/cars/{car}/latest-reviews',
     
     uriVariables: [
         'car' => new Link(

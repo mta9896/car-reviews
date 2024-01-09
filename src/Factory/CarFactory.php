@@ -42,9 +42,9 @@ final class CarFactory extends ModelFactory
     protected function getDefaults(): array
     {
         return [
-            'brand' => $this->faker->vehicleBrand,
+            'brand' => $this->faker->vehicleBrand(),
             'color' => self::faker()->colorName(),
-            'model' => $this->faker->vehicle,
+            'model' => $this->faker->vehicle(),
         ];
     }
 
