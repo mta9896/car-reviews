@@ -78,6 +78,9 @@
         }
     },
     "require-dev": {
-        "symfony/maker-bundle": "^1.52"
+        "doctrine/doctrine-fixtures-bundle": "^3.5",
+        "pelmered/fake-car": "^1.7",
+        "symfony/maker-bundle": "^1.52",
+        "zenstruck/foundry": "^1.36"
     }
 }
